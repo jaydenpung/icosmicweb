@@ -24,7 +24,7 @@
                         <label for="image" class="col-sm-2 control-label input-sm"><g:message code="shop.image.label" /></label>
                         <div class="col-sm-3">
                             <g:if test="${shop.image}">
-                                <img src="${resource(file: shop.image.path)}" height="300" width="400"/>
+                                <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}" height="300" width="400"/>
                             </g:if>
                             <g:else>
                                 <asset:image src="NoPicAvailable.png" height="300" width="400"/>

@@ -150,5 +150,5 @@ assets {
 }
 
 storage {
-    shopImage = "images/shopImage"
+    shopImage = "/tmp/icosmic/images/shopImage"
 }

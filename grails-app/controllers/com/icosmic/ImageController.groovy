@@ -9,11 +9,22 @@ class ImageController {
 
     def renderImage() {
         try {
-                String profilePicturePath = "${grailsApplication.config.storage.shopImage}/${params.id}.png"
-                File file = new File(profilePicturePath)
-                response.contentType = URLConnection.guessContentTypeFromName(file.getName())
-                response.outputStream << file.bytes
-                response.outputStream.flush()
+                def image = Image.findByGeneratedName(params.id + ".png")
+                def etag = "${image.ident()}:${image.version}"             
+                def header = request.getHeader('If-None-Match')
+
+                if (header != etag) {
+                    response.setHeader('ETag', etag)
+
+                    String profilePicturePath = "${grailsApplication.config.storage.shopImage}/${params.id}.png"
+                    File file = new File(profilePicturePath)
+                    response.contentType = URLConnection.guessContentTypeFromName(file.getName())
+                    response.outputStream << file.bytes
+                    response.outputStream.flush()
+                }
+                else {
+                    response.sendError(304) // Not modified
+                }
             }
         catch(Exception ex) {
             log.error("renderImage() failed: ${ex.message}", ex)

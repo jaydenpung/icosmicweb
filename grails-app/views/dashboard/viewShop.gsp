@@ -14,7 +14,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-6 col-sm-6 col-xs-6">
-                        <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}">
+                        <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}" class="viewImage">
                     </div>
                     <div class="col-lg-6 col-sm-6 col-xs-6">
                         <h3 class="product-title">${shop.name}</h3>

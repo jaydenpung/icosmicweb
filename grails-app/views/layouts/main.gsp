@@ -6,10 +6,11 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
     <head>
         <!-- FIXME: Clean up css ad js, change link resource to file -->
+        <title>iCosmic</title>
         <asset:stylesheet src="bootstrap.min.css"/>
         <asset:stylesheet src="shop-homepage.css"/>
         <asset:stylesheet src="icosmic.css"/>
-        <asset:stylesheet src="bootstrapValidator.min.css"/>
+        <asset:stylesheet src="bootstrapValidator.css"/>
 
         <asset:javascript src="jquery.js"/>
         <asset:javascript src="bootstrap.min.js"/>
