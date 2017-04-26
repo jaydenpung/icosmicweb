@@ -1,6 +1,7 @@
 package com.icosmic
 
 import org.springframework.web.multipart.commons.CommonsMultipartFile
+import org.codehaus.groovy.grails.web.context.ServletContextHolder
 import grails.util.Holders
 
 import com.icosmic.Shop

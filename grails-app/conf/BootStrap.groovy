@@ -15,27 +15,18 @@ class BootStrap {
             case Environment.PRODUCTION:
                 break
             case Environment.DEVELOPMENT:
-                if (Role.count() == 0) {
-                    createDefaultRoles()
-                }
-                if (SecUser.count() == 0) {
-                    createDefaultSecUsers()
-                }
-                if (Config.count() == 0) {
-                    createDefaultConfigs()
-                }
                 break
         }
 
         if (Role.count() == 0) {
-                    createDefaultRoles()
-                }
-                if (SecUser.count() == 0) {
-                    createDefaultSecUsers()
-                }
-                if (Config.count() == 0) {
-                    createDefaultConfigs()
-                }
+            createDefaultRoles()
+        }
+        if (SecUser.count() == 0) {
+            createDefaultSecUsers()
+        }
+        if (Config.count() == 0) {
+            createDefaultConfigs()
+        }
     }
     def destroy = {
         def servletContext = Holders.getServletContext()
@@ -64,7 +55,7 @@ class BootStrap {
             [
                 [
                     name: "admin",
-                    password: "password",
+                    password: "cosmic@dmin1",
                     roles: [
                         "ROLE_ADMIN"
                     ]

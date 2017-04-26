@@ -28,7 +28,7 @@ class Shop implements Serializable, IEntity {
 
     static constraints = {
         name(size: 1..100)
-        shortDescription(nullable: true, size: 1..150)
+        shortDescription(nullable: true, size: 1..1000)
         description(nullable: true, size: 1..100000)
         url(nullable: true, size: 1..5000)
         coverImage()

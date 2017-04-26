@@ -31,7 +31,7 @@
                             <g:if test="${first == 'true'}">
                                 <div class="item active">
                                 <a href="${createLink(controller:'dashboard', action: 'viewShop', params: [id: shop.id])}">
-                                     <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}">
+                                     <img src="${resource(file: shop.image.path)}">
                                 </a>
                                 <g:set var="first" value="false"/>
                             </div>
@@ -39,7 +39,7 @@
                             <g:else>
                                 <div class="item">
                                     <a href="${createLink(controller:'dashboard', action: 'viewShop', params: [id: shop.id])}">
-                                         <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}">
+                                         <img src="${resource(file: shop.image.path)}">
                                     </a>
                                 </div>
                             </g:else>
@@ -63,12 +63,12 @@
                     <div class="col-lg-4 col-sm-6 col-xs-12">
                         <g:if test="${shop.redirect == Boolean.TRUE}">
                             <a href="${shop.url}">
-                                 <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}" class="thumbnail" style="width: 350px; height:260px">
+                                 <img src="${resource(file: shop.image.path)}" class="thumbnail" style="width: 350px; height:260px">
                             </a>
                         </g:if>
                         <g:else>
                             <a href="${createLink(controller:'dashboard', action: 'viewShop', params: [id: shop.id])}">
-                                 <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}" class="thumbnail" style="width: 350px; height:260px">
+                                 <img src="${resource(file: shop.image.path)}" class="thumbnail" style="width: 350px; height:260px">
                             </a>
                         </g:else>
                     </div>
@@ -84,12 +84,12 @@
                     <div class="col-lg-3 col-sm-4 col-xs-6">
                         <g:if test="${shop.redirect == Boolean.TRUE}">
                             <a href="${shop.url}">
-                                 <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}" class="thumbnail" style="width: 260px; height:110px">
+                                 <img src="${resource(file: shop.image.path)}" class="thumbnail" style="width: 260px; height:110px">
                             </a>
                         </g:if>
                         <g:else>
                             <a href="${createLink(controller:'dashboard', action: 'viewShop', params: [id: shop.id])}">
-                                 <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}" class="thumbnail" style="width: 260px; height:110px">
+                                 <img src="${resource(file: shop.image.path)}" class="thumbnail" style="width: 260px; height:110px">
                             </a>
                         </g:else>
                     </div>

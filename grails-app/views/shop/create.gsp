@@ -57,7 +57,7 @@
                     <div class="form-group">
                         <label for="shortDescription" class="col-sm-2 control-label input-sm"><g:message code="shop.shortDescription.label" /></label>
                         <div class="col-sm-5">
-                            <textarea rows="4" class="form-control input-sm" name="shortDescription" maxlength="150" row="4"></textarea>
+                            <textarea rows="4" class="form-control input-sm" name="shortDescription" maxlength="1000" row="4"></textarea>
                         </div>
                     </div>
                     <%-- Description --%>

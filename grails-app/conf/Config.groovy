@@ -12,7 +12,6 @@
 // }
 
 grails.config.locations = [
-    "file:/home/jay/Config/icosmic-config.groovy",
     "file:C:/inetpub/wwwroot/Config/icosmic-config.groovy"
 ]
 
@@ -151,5 +150,5 @@ assets {
 }
 
 storage {
-    shopImage = "/tmp/icosmic/images/shopImage"
+    shopImage = "images/shopImage"
 }

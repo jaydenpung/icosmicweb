@@ -1,5 +1,7 @@
 package com.icosmic
 
+import grails.plugin.cache.*
+
 class ImageController {
 
     def imageService
@@ -7,12 +9,12 @@ class ImageController {
 
     def renderImage() {
         try {
-            String profilePicturePath = "${grailsApplication.config.storage.shopImage}/${params.id}.png"
-            File file = new File(profilePicturePath)
-            response.contentType = URLConnection.guessContentTypeFromName(file.getName())
-            response.outputStream << file.bytes
-            response.outputStream.flush()
-        }
+                String profilePicturePath = "${grailsApplication.config.storage.shopImage}/${params.id}.png"
+                File file = new File(profilePicturePath)
+                response.contentType = URLConnection.guessContentTypeFromName(file.getName())
+                response.outputStream << file.bytes
+                response.outputStream.flush()
+            }
         catch(Exception ex) {
             log.error("renderImage() failed: ${ex.message}", ex)
         }

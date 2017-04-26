@@ -24,7 +24,7 @@
                         <label for="image" class="col-sm-2 control-label input-sm"><g:message code="shop.image.label" /></label>
                         <div class="col-sm-3">
                             <g:if test="${shop.image}">
-                                <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}" height="300" width="400"/>
+                                <img src="${resource(file: shop.image.path)}" height="300" width="400"/>
                             </g:if>
                             <g:else>
                                 <asset:image src="NoPicAvailable.png" height="300" width="400"/>
@@ -64,7 +64,7 @@
                     <div class="form-group">
                         <label for="shortDescription" class="col-sm-2 control-label input-sm"><g:message code="shop.shortDescription.label" /></label>
                         <div class="col-sm-5">
-                            <textarea rows="4" class="form-control input-sm" name="shortDescription" maxlength="150" row="4">${shop.shortDescription}</textarea>
+                            <textarea rows="4" class="form-control input-sm" name="shortDescription" maxlength="1000" row="4">${shop.shortDescription}</textarea>
                         </div>
                     </div>
                     <%-- Description --%>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-2"></div>
-                        <div class="col-sm-10" id="rawContent">
+                        <div class="col-sm-10" id="rawContent" style="overflow: scroll;">
                             ${raw(shop.description)}
                         </div>
                         <div class="col-sm-10 hide-display" id="editContent">

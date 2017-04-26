@@ -62,7 +62,7 @@ class ShopController {
                     rows << [
                         id: shop.id,
                         name: shop.name,
-                        image: "<img src=\"${createLink(action: "renderImage", controller:"image")}/${shop.image.generatedName}\" style='max-width: 150px; max-height: 150px'/>",
+                        image: "<img src=\"${resource(file: shop.image.path)}\" style='max-width: 150px; max-height: 150px'/>",
                         price: null,
                         quantity: null
                     ]

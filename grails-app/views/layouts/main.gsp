@@ -50,17 +50,15 @@
                                     <g:link controller="shop" action="list"><g:message code="menuItem.maintenance.label"/></g:link>
                                 </li>
                             </sec:ifAllGranted>
+                            <li>
+                                <sec:ifLoggedIn>
+                                    <g:link controller="login" action="logout"><g:message code="menuItem.logout.label"/></g:link>
+                                </sec:ifLoggedIn>
+                                <sec:ifNotLoggedIn>
+                                    <g:link controller="login" action="index"><g:message code="menuItem.login.label"/></g:link>
+                                </sec:ifNotLoggedIn>
+                            </li>
                         </ul>
-                    </div>
-                    <div class="pull-right col-md-2">
-                        <sec:ifLoggedIn>
-                            <g:link controller="login" action="logout" class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-log-out"></span> <g:message code="menuItem.logout.label"/>
-                            </g:link>
-                        </sec:ifLoggedIn>
-                        <sec:ifNotLoggedIn>
-                            <g:link controller="login" action="index" class="btn btn-success"><g:message code="menuItem.login.label"/></g:link>
-                        </sec:ifNotLoggedIn>
                     </div>
                     <!-- /.navbar-collapse -->
                 <!-- /.container -->

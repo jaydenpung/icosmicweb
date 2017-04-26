@@ -12,29 +12,23 @@
             <div class="panel panel-default">
             <div class="panel-heading"><g:message code="shop.view.panel.label"/></div>
             <div class="panel-body">
-                <div class="container-fluid">
-                    <div class="wrapper row">
-                        <div class="preview col-md-6">
-                            <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1">
-                                    <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}" width="500px" height="350px"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="details col-md-6">
-                            <h3 class="product-title">${shop.name}</h3>
-                            <g:if test="${shop.url}">
-                                <a href="${shop.url}">Go to Official Website</a>
-                            </g:if>
-                            <p class="product-description">${shop.shortDescription}</p>
-                        </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-6">
+                        <img src="${createLink(action: 'renderImage', controller:'image')}/${shop.image.generatedName}">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6">
+                        <h3 class="product-title">${shop.name}</h3>
+                        <g:if test="${shop.url}">
+                            <a href="${shop.url}">Go to Official Website</a>
+                        </g:if>
+                        <p class="product-description">${shop.shortDescription}</p>
                     </div>
                 </div>
                 <br/>
                 <br/>
-                <div class="container-fluid">
-                    ${raw(shop.description)}
-                </div>
+                    <div class="container-fluid" style="overflow: scroll;">
+                        ${raw(shop.description)}
+                    </div>
             </div>
             </div>
         </div>
